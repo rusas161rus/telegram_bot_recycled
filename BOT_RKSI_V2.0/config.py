@@ -1,15 +1,15 @@
 #Bot
-TOKEN='5771211381:AAE5n5qtUS0SRMBpvboM_vtwdUIbQxLu5y4'
+TOKEN='Your token'
 
 #sqlconnect
-USER="postgres"                                
-PASSWORD="657834"
-HOST="localhost"
-PORT="5432"
-DATABASE="BOT_TEL_TEST"
+USER="your data"                                
+PASSWORD="your data"
+HOST="your data"
+PORT="your data"
+DATABASE="your data"
 
 # notification
-my_chat_id = -680891031
+my_chat_id = 0000000
 
 # Admin_list
 class Admin_user_id():
@@ -17,9 +17,9 @@ class Admin_user_id():
         self.id_user = id_user
         self.name_user = name
 
-Admin_user_0 = Admin_user_id (648841533, "Вова")
-Admin_user_1 = Admin_user_id (658118472, "Руслан")
-Admin_user_2 = Admin_user_id (8350493, "Анатолий")
+Admin_user_0 = Admin_user_id (0000000, "xxxxxxxx")
+Admin_user_1 = Admin_user_id (0000000, "xxxxxxxx")
+Admin_user_2 = Admin_user_id (0000000, "xxxxxxxx")
 Admin_user_3 = Admin_user_id (0000000, "xxxxxxxx")
 Admin_user_4 = Admin_user_id (0000000, "xxxxxxxx")
 
