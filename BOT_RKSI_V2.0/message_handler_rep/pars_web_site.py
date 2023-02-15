@@ -18,43 +18,137 @@ def pars_site(__name__):
                 print(cls, file=file)
 
 
-        with open ('pars.txt', 'r') as f:
+        file_name='pars.txt'
+
+        with open (file_name, 'r') as f:
             old_data = f.read()
         new_data = old_data.replace(", ", "', '")   
-        with open ('pars.txt', 'w') as f:
+        with open (file_name, 'w') as f:
             f.write(new_data)
-        with open ('pars.txt', 'r') as f:
+        with open (file_name, 'r') as f:
             old_data = f.read()
         new_data = old_data.replace("  —  ", "', '")   
-        with open ('pars.txt', 'w') as f:
+        with open (file_name, 'w') as f:
             f.write(new_data)
-        with open ('pars.txt', 'r') as f:
+        with open (file_name, 'r') as f:
             old_data = f.read()
         new_data = old_data.replace("<br/><b>", "', '") 
-        with open ('pars.txt', 'w') as f:
+        with open (file_name, 'w') as f:
             f.write(new_data)
-        with open ('pars.txt', 'r') as f:
+        with open (file_name, 'r') as f:
             old_data = f.read()
         new_data = old_data.replace("</b><br/>", "', '")  
-        with open ('pars.txt', 'w') as f:
+        with open (file_name, 'w') as f:
             f.write(new_data)
-        with open ('pars.txt', 'r') as f:
+        with open (file_name, 'r') as f:
             old_data = f.read()
         new_data = old_data.replace("<p>", "('") 
-        with open ('pars.txt', 'w') as f:
+        with open (file_name, 'w') as f:
             f.write(new_data)
-        with open ('pars.txt', 'r') as f:
+        with open (file_name, 'r') as f:
             old_data = f.read()
         new_data = old_data.replace("</p>", "')")   
-        with open ('pars.txt', 'w') as f:
+        with open (file_name, 'w') as f:
             f.write(new_data)
-        with open ('pars.txt', 'r') as f:
+        with open (file_name, 'r') as f:
             old_data = f.read()
         new_data = old_data.replace("'Классный час</b>'", "'Классный час', 'Классный час', 'Классный час'")  
-        with open ('pars.txt', 'w') as f:
+        with open (file_name, 'w') as f:
             f.write(new_data)
-        with open ('pars.txt', 'r') as f:
+        with open (file_name, 'r') as f:
             old_data = f.read()
         new_data = old_data.replace("""<a href="/">На сайт</a>""", "00:00', '00:00', '00:00', '00:00', '00:00") 
-        with open ('pars.txt', 'w') as f:
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        # важное разделение
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Информатика</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)        
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Основы финансовой грамотности</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)        
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Человек в современном мире</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>История</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)        
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Астрономия</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)        
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Родной язык</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Литература</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Физика</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Физическая культура</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Математика</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Классный час</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)        
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Большие данные</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Русский язык</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Иностранный язык</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)            
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Экологические основы природопользования</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>", "('00:00', '00:00', '") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("</b>", "', '00:00')") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("\n\n", "\n") 
+        with open (file_name, 'w') as f:
             f.write(new_data)
