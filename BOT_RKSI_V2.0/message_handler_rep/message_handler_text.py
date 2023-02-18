@@ -14,7 +14,9 @@ def massege_handler_content(bot, __name__):
     if __name__ == '__main__':    
         @bot.message_handler(content_types = ['text', 'document', 'photo', 'audio', 'video', 'voice'])
         
-        def send_text(message):            
+        def send_text(message):
+            if message.text == 'скрыть кнопки':
+                bot.send_message(message.chat.id, 'что бы снова открыть кнопки введи /start', reply_markup=types.ReplyKeyboardRemove()) 
             if message.text=='Сайт РКСИ и Ссылка на Облако с заданиями':
                 markup=types.InlineKeyboardMarkup(row_width=2)
                 btm_ss_0 = types.InlineKeyboardButton("Облако с Заданиями", url="https://cloud.mail.ru/public/Tb2G/Fuc5s2Sks")
