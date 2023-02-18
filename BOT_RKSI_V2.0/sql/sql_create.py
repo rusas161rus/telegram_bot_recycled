@@ -2,7 +2,7 @@ import psycopg2
 from psycopg2 import Error
 
 connection = psycopg2.connect(user="postgres",                                
-                                password="657834",
+                                password="xxxx
                                 host="localhost",
                                 port="5432",
                                 database="BOT_TEL_TEST")
