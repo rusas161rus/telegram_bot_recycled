@@ -34,6 +34,23 @@ if __name__ == "__main__":
     schedule.every().day.at("18:10:00").do(function_to_run)    
     Thread(target=schedule_checker).start() 
 
+@bot.message_handler(commands = ['start'])
+def button(message):        
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+    btm6 = types.KeyboardButton('Сайт РКСИ и Ссылка на Облако с заданиями')
+    markup.add(btm6)
+    btm1 = types.KeyboardButton('Расписание')
+    btm4 = types.KeyboardButton('Расписание с сайта РКСИ')
+    btm5 = types.KeyboardButton('Поиск по времени')    
+    markup.add(btm4, btm1, btm5)
+    btm3 = types.KeyboardButton('Обновить расписание в базе')
+    btm2 = types.KeyboardButton('Изменить расписание')               
+    markup.add(btm3, btm2)
+    btm7 = types.KeyboardButton('Администрация')
+    markup.add(btm7)
+    bot.send_message(message.chat.id, 'Бот запущен!', reply_markup = markup)
+
+
 message_handler_admin.massege_handler_content_admin(bot, __name__)
 message_handler_text.massege_handler_content(bot, __name__)
 
