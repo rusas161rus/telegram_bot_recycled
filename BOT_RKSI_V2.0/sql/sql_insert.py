@@ -44,3 +44,17 @@ def create_request_SQL_ss6(message, bot, __name__, text_insert_0, text_insert_1,
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
             bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+
+def create_request_admin_SQL_ss6(message, bot, __name__, text_admin_insert_0, text_admin_insert_1, text_admin_insert_2, text_admin_insert_3, text_admin_insert_4):
+    if __name__ == '__main__':    
+        try:                
+            #text_insert_5 = message.text
+            text = [text_admin_insert_0, text_admin_insert_1, text_admin_insert_2, text_admin_insert_3, text_admin_insert_4]           
+            cursor = connection.cursor()                              
+            cursor.execute("""INSERT INTO admin_table (USER_ID, USER_LAST_NAME, USER_FERST_NAME, USER_SUR_NAME, PRIMECHANIE) VALUES (%s, %s, %s, %s, %s)""".format(message.text), (text))
+            connection.commit()
+            print(cursor.rowcount, "1 Запись успешно Вставлена")        
+            bot.send_message(message.chat.id, "1 Запись успешно Вставлена".format(name = message.text))  
+        except (Exception, Error) as error:
+            print("Ошибка при работе с PostgreSQL", error)
+            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))

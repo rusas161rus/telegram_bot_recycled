@@ -19,3 +19,15 @@ def create_request_delete_1(message, bot, __name__):
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
             bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text)) 
+
+def create_request_admin_delete_1(message, bot, __name__):
+    if __name__ == '__main__':           
+        try:                  
+            cursor = connection.cursor()                              
+            cursor.execute("""Delete from admin_table where id = ('{}')""".format(message.text))
+            connection.commit()
+            print(cursor.rowcount, "Запись успешно удалена")        
+            bot.send_message(message.chat.id, "Запись успешно удалена".format(name = message.text))  
+        except (Exception, Error) as error:
+            print("Ошибка при работе с PostgreSQL", error)
+            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text)) 

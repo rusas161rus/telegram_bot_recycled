@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
        
 def pars_site(__name__):
     if __name__ == '__main__':
-        with open ('pars.txt', 'w') as f:
+        file_name='pars.txt'
+
+        with open (file_name, 'w') as f:
             f.write('')
         url = 'https://rksi.ru/mobile_schedule'
         data = 'group=%C8%D1-11&stt=%CF%EE%EA%E0%E7%E0%F2%FC%21'
@@ -11,14 +13,11 @@ def pars_site(__name__):
                 'Accept': 'text/html; charset=windows-1251'}
         r = requests.post(url, data=data, headers=headers)
         soup = BeautifulSoup(r.text, "html.parser")
-        classList = soup.findAll('p')
+        classList = soup.findAll(['p', 'b'])        
         for cls in classList:
             print(cls)
-            with open("pars.txt", "a") as file:
-                print(cls, file=file)
-
-
-        file_name='pars.txt'
+            with open(file_name, "a") as file:
+                print(cls, file=file)       
 
         with open (file_name, 'r') as f:
             old_data = f.read()

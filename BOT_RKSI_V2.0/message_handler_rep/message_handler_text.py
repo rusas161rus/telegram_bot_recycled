@@ -1,13 +1,14 @@
 from telebot import types
 import pyperclip
-import config
+import os
+import Admin_options.Admin_list_file as Admin_list_file
 from message_handler_rep import pars_web_site
 from sql import sql_select
 from sql import sql_insert
 from message_handler_rep import callback_handler_0_request
 from message_handler_rep import callback_handler_1_request
 
-Admin_list = config.Admin_list
+Admin_list = Admin_list_file.Admin_list
 
 def massege_handler_content(bot, __name__):
     if __name__ == '__main__':    
@@ -24,6 +25,7 @@ def massege_handler_content(bot, __name__):
                 pars_web_site.pars_site(__name__)                            
                 with open("pars.txt") as file:
                     data = file.read()
+                os.remove("pars.txt")
                 pyperclip.copy(data)  
                 bot.send_message(message.chat.id, data)
             if message.text == 'Обновить расписание в базе':
@@ -31,7 +33,7 @@ def massege_handler_content(bot, __name__):
                     try:  
                         id_message_user = message.from_user.id
                     except ValueError:
-                        print("Обновить расписание в базе") 
+                        print("что то пошло не так") 
                     if id_message_user in Admin_list:
                         sql_insert.sql_insert_funk(bot, __name__, message)
                         break                           
