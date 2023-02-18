@@ -8,7 +8,6 @@ from threading import Thread
 from time import sleep
 from message_handler_rep import message_handler_text
 from Admin_options  import message_handler_admin
-from sql import sql_select
 
 logger=telebot.logger
 telebot.logger.setLevel(logging.DEBUG)
@@ -39,24 +38,21 @@ if __name__ == "__main__":
 def button(message):        
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     btm6 = types.KeyboardButton('Сайт РКСИ и Ссылка на Облако с заданиями')
-    markup.add(btm6)
+    btm8 = types.KeyboardButton('скрыть кнопки')
+    markup.add(btm6, btm8)
     btm1 = types.KeyboardButton('Расписание')
     btm4 = types.KeyboardButton('Расписание с сайта РКСИ')
     btm5 = types.KeyboardButton('Поиск по времени')    
-    markup.add(btm4, btm1, btm5)
+    markup.add(btm4, btm1, btm5)   
     btm3 = types.KeyboardButton('Обновить расписание в базе')
     btm2 = types.KeyboardButton('Изменить расписание')               
     markup.add(btm3, btm2)
-    btm7 = types.KeyboardButton('Администрация')
+    btm7 = types.KeyboardButton('Администрация')    
     markup.add(btm7)    
     bot.send_message(message.chat.id, 'Бот запущен!', reply_markup = markup)
-
 
 message_handler_admin.massege_handler_content_admin(bot, __name__)
 message_handler_text.massege_handler_content(bot, __name__)
 
-
-
-    
 if __name__=='__main__':
    bot.polling(none_stop=True, timeout=30)
