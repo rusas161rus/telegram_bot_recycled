@@ -1,14 +1,14 @@
 from telebot import types
 import pyperclip
 import os
-import Admin_options.Admin_list_file as Admin_list_file
+from Admin_options import Admin_list_file
 from message_handler_rep import pars_web_site
 from sql import sql_select
 from sql import sql_insert
 from message_handler_rep import callback_handler_0_request
 from message_handler_rep import callback_handler_1_request
 
-Admin_list = Admin_list_file.Admin_list
+Admin_list = {}
 
 def massege_handler_content(bot, __name__):
     if __name__ == '__main__':    
@@ -29,9 +29,11 @@ def massege_handler_content(bot, __name__):
                 pyperclip.copy(data)  
                 bot.send_message(message.chat.id, data)
             if message.text == 'Обновить расписание в базе':
+                Admin_list_file.sql_admin_check(__name__, message)
                 while True:
                     try:  
-                        id_message_user = message.from_user.id
+                        id_message_user = message.from_user.id                        
+                        Admin_list = Admin_list_file.Admin_list
                     except ValueError:
                         print("что то пошло не так") 
                     if id_message_user in Admin_list:
@@ -50,9 +52,11 @@ def massege_handler_content(bot, __name__):
                 bot.send_message(message.chat.id, "Нажмите кнопку!", reply_markup = markup)
                 callback_handler_0_request.callback_handler_0_content(bot, __name__)
             if message.text == 'Изменить расписание':
+                Admin_list_file.sql_admin_check(__name__, message)
                 while True:
                     try:                
-                        id_message_user = message.from_user.id                                                           
+                        id_message_user = message.from_user.id                        
+                        Admin_list = Admin_list_file.Admin_list                                                         
                     except ValueError:
                         print("что то пошло не так")                        
                         continue        

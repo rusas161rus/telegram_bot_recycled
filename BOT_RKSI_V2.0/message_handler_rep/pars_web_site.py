@@ -150,4 +150,4 @@ def pars_site(__name__):
             old_data = f.read()
         new_data = old_data.replace("\n\n", "\n") 
         with open (file_name, 'w') as f:
-            f.write(new_data)
+            f.write(new_data)           

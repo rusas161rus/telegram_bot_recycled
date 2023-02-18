@@ -8,6 +8,7 @@ from threading import Thread
 from time import sleep
 from message_handler_rep import message_handler_text
 from Admin_options  import message_handler_admin
+from sql import sql_select
 
 logger=telebot.logger
 telebot.logger.setLevel(logging.DEBUG)
@@ -47,7 +48,7 @@ def button(message):
     btm2 = types.KeyboardButton('Изменить расписание')               
     markup.add(btm3, btm2)
     btm7 = types.KeyboardButton('Администрация')
-    markup.add(btm7)
+    markup.add(btm7)    
     bot.send_message(message.chat.id, 'Бот запущен!', reply_markup = markup)
 
 
