@@ -5,8 +5,7 @@ from Admin_options import Admin_list_file
 from message_handler_rep import pars_web_site
 from sql import sql_select
 from sql import sql_insert
-from message_handler_rep import callback_handler_0_request
-from message_handler_rep import callback_handler_1_request
+from message_handler_rep import callback_handler_request
 
 Admin_list = {}
 
@@ -15,8 +14,9 @@ def massege_handler_content(bot, __name__):
         @bot.message_handler(content_types = ['text', 'document', 'photo', 'audio', 'video', 'voice'])
         
         def send_text(message):
-            if message.text == 'скрыть кнопки':
-                bot.send_message(message.chat.id, 'что бы снова открыть кнопки введи /start', reply_markup=types.ReplyKeyboardRemove()) 
+            if message.text == 'скрыть кнопки':                
+                bot.send_message(message.chat.id, 'что бы снова открыть кнопки введи /start', reply_markup=types.ReplyKeyboardRemove())
+                bot.edit_message_reply_markup(message.chat.id, message_id = message.message_id, reply_markup = '')                             
             if message.text=='Сайт РКСИ и Ссылка на Облако с заданиями':
                 markup=types.InlineKeyboardMarkup(row_width=2)
                 btm_ss_0 = types.InlineKeyboardButton("Облако с Заданиями", url="https://cloud.mail.ru/public/Tb2G/Fuc5s2Sks")
@@ -52,7 +52,7 @@ def massege_handler_content(bot, __name__):
                 btmin_p=types.InlineKeyboardButton("По Времени Конца", callback_data = 'conec')
                 markup.add(btmin_s, btmin_p)              
                 bot.send_message(message.chat.id, "Нажмите кнопку!", reply_markup = markup)
-                callback_handler_0_request.callback_handler_0_content(bot, __name__)
+                callback_handler_request.callback_handler_content(bot, __name__)
             if message.text == 'Изменить расписание':
                 Admin_list_file.sql_admin_check(__name__, message)
                 while True:
@@ -73,10 +73,9 @@ def massege_handler_content(bot, __name__):
                         btm_l_4 = types.InlineKeyboardButton("Учитель", callback_data = 'e')
                         btm_l_5 = types.InlineKeyboardButton("Кабинет", callback_data = 'f')
                         markup.add(btm_l_3, btm_l_4, btm_l_5)
-                        markup.add(types.InlineKeyboardButton("Удалить запись", callback_data = 'g')) 
-                        #markup.add(types.InlineKeyboardButton("Обновить целую запись", callback_data = 'l'))    
-                        bot.send_message(message.chat.id, "Выберете что хотите отредактировать", reply_markup = markup)
-                        callback_handler_1_request.callback_handler_0_content(bot, __name__, message)
+                        markup.add(types.InlineKeyboardButton("Удалить запись", callback_data = 'g'))                                                  
+                        bot.send_message(message.chat.id, "Выберете что хотите отредактировать", reply_markup = markup)                                               
+                        callback_handler_request.callback_handler_content(bot, __name__, message)                                                                     
                         break
                     if id_message_user not in Admin_list:
                         bot.send_message(message.chat.id, "Что бы менять расписание нужно быть админом")

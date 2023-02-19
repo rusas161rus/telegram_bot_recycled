@@ -1,5 +1,5 @@
 from telebot import types
-from message_handler_rep import callback_handler_1_request
+from message_handler_rep import callback_handler_request
 from Admin_options import Admin_list_file
 
 
@@ -25,9 +25,10 @@ def massege_handler_content_admin(bot, __name__):
                         btm_l_1 = types.InlineKeyboardButton("Добавить Админа", callback_data = 'admin_b')
                         btm_l_2 = types.InlineKeyboardButton("Удалить Админа", callback_data = 'admin_c')
                         markup.add(btm_l_1, btm_l_2)          
-                        bot.send_message(message.chat.id, "Ваши действия?", reply_markup = markup)
-                        callback_handler_1_request.callback_handler_0_content(bot, __name__, message)
-                        break                    
+                        bot.send_message(message.chat.id, "Ваши действия?", reply_markup = markup)                                                
+                        callback_handler_request.callback_handler_content(bot, __name__, message)                        
+                        break 
+                        #bot.delete_message(message.chat.id, mess_0.id)                   
                     if id_message_user not in Admin_list:
                         bot.send_message(message.chat.id, "Вход только по пропускам")
                         break   

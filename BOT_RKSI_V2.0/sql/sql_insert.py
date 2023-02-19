@@ -24,7 +24,7 @@ def sql_insert_funk(bot, __name__, message):
                 print(line)                                
             connection.commit()
             print(cursor.rowcount, "1 Запись успешно Вставлена")
-            bot.send_message(message.chat.id, "Расписание в базе успешно обновлено".format(message.from_user, bot.get_me()),
+            bot.send_message(message.chat.id, "Расписание в базе успешно обновлено".format(message.from_user, bot.get_me()), 
             parse_mode = 'html')                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)

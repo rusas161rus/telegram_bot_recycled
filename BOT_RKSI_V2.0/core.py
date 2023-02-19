@@ -37,9 +37,8 @@ if __name__ == "__main__":
 @bot.message_handler(commands = ['start'])
 def button(message):        
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-    btm6 = types.KeyboardButton('Сайт РКСИ и Ссылка на Облако с заданиями')
-    btm8 = types.KeyboardButton('скрыть кнопки')
-    markup.add(btm6, btm8)
+    btm6 = types.KeyboardButton('Сайт РКСИ и Ссылка на Облако с заданиями')    
+    markup.add(btm6)
     btm1 = types.KeyboardButton('Расписание')
     btm4 = types.KeyboardButton('Расписание с сайта РКСИ')
     btm5 = types.KeyboardButton('Поиск по времени')    
@@ -47,8 +46,9 @@ def button(message):
     btm3 = types.KeyboardButton('Обновить расписание в базе')
     btm2 = types.KeyboardButton('Изменить расписание')               
     markup.add(btm3, btm2)
-    btm7 = types.KeyboardButton('Администрация')    
-    markup.add(btm7)    
+    btm7 = types.KeyboardButton('Администрация')
+    btm8 = types.KeyboardButton('скрыть кнопки')    
+    markup.add(btm7, btm8)    
     bot.send_message(message.chat.id, 'Бот запущен!', reply_markup = markup)
 
 message_handler_admin.massege_handler_content_admin(bot, __name__)

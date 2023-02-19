@@ -114,7 +114,7 @@ def select_request_SQL_admin(message, bot, __name__):
                 d = str(row[3])
                 e = str(row[4])                                 
                 f = str(row[5])                                
-                admin_l=("|№=" + a + "|user_id: " + b + "\n|user_l_n " + c + "|user_f_n: " + d + "|user_s_n: " + e + "\n|primechanie: " + f + "\n\n")
+                admin_l=("|№=" + a + "|user_id: " + b + "\n|user_l_n: " + c + "|user_f_n: " + d + "|user_s_n: " + e + "\n|primechanie: " + f + "\n\n")
                 #print("ИД =", row[0], "| Дата =", row[1], "| Время начала =", row[2], "| Время конца =", row[3], "| Предмет =", row[4], "| Преподователь =", row[5], "| Кабинет =", row[6])                      
                 with open ('admin_list.txt', 'a') as f:
                     f.write(admin_l)
