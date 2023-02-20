@@ -2,7 +2,7 @@ import os
 import psycopg2
 import config
 from psycopg2 import Error
-from message_handler_rep import pars_web_site
+from message_handler_rep import pars_web_site_0
 
 connection = psycopg2.connect(  user = config.USER, 
                                 password = config.PASSWORD, 
@@ -13,7 +13,7 @@ connection = psycopg2.connect(  user = config.USER,
 def sql_insert_funk(bot, __name__, message):
     if __name__ == '__main__':
         try:
-            pars_web_site.pars_site(__name__)                            
+            pars_web_site_0.pars_site(__name__)                            
             file1 = open('pars.txt')
             cursor = connection.cursor()
             cursor.execute (''' DELETE FROM Raspisanie ''')    
