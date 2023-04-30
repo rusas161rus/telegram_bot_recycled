@@ -35,6 +35,10 @@ if __name__ == "__main__":
     #schedule.every().day.at("18:10:00").do(function_to_run)    
     Thread(target=schedule_checker).start() 
 
+@bot.message_handler(commands = ['start'])
+def start_message(message):
+    bot.send_message(message.chat.id, 'Привет, данный бот призван облегчить твое взаимодействие с колледжом РКСИ.\nНапоминанаю, что при нажатии кнопки меню слева или если ввести в поле ввода сообщения слеш откроется меню с 3 вариантами:\n/raspisanie - покажет актуальное расписание нашей группы\n/admin_menu если ты не админ то туда не нажимай\n/faq - здесь актуальная информация по преподователям и предмета, а так же ссылки на облако')
+
 @bot.message_handler(commands = ['raspisanie'])
 def button(message):        
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)    
