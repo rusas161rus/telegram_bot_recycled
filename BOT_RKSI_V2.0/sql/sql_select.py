@@ -24,13 +24,14 @@ def sql_select_funk(bot, __name__, message):
                 e = str(row[4])                                 
                 f = str(row[5])
                 g = str(row[6])                
-                raspis=("|ИД=" + a + "|" + b + "|с-" + c + "|по-" + d + "\n|" + e + "|" + f + "|каб-" + g + "\n\n")
+                raspis=("|ИД=" + a + "|" + b + ", " + c + ", " + d + "\n" + e + ", " + f + ", " + g + "\n\n")
+                bot.send_message(message.chat.id, raspis)
                 #print("ИД =", row[0], "| Дата =", row[1], "| Время начала =", row[2], "| Время конца =", row[3], "| Предмет =", row[4], "| Преподователь =", row[5], "| Кабинет =", row[6])                      
                 with open ('rasp.txt', 'a') as f:
                     f.write(raspis)
             with open("rasp.txt") as file:
                 data = file.read()
-            bot.send_message(message.chat.id, data)
+            
             os.remove("rasp.txt")
                
         except (Exception, Error) as error:
@@ -55,13 +56,14 @@ def select_request_SQL_s_0(message, bot, __name__, text_select_ts_0, text_select
                 e = str(row[4])                                 
                 f = str(row[5])
                 g = str(row[6])                
-                raspis=("|ИД=" + a + "|" + b + "|с-" + c + "|по-" + d + "\n|" + e + "|" + f + "|каб-" + g + "\n\n")
+                raspis=("|ИД=" + a + "|" + b + ", " + c + ", " + d + "\n" + e + ", " + f + ", " + g + "\n\n")
+                bot.send_message(message.chat.id, raspis)
                 #print("ИД =", row[0], "| Дата =", row[1], "| Время начала =", row[2], "| Время конца =", row[3], "| Предмет =", row[4], "| Преподователь =", row[5], "| Кабинет =", row[6])                      
                 with open ('rasp.txt', 'a') as f:
                     f.write(raspis)
             with open("rasp.txt") as file:
                 data = file.read()
-            bot.send_message(message.chat.id, data)
+            
             os.remove("rasp.txt")
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -86,13 +88,14 @@ def select_request_SQL_s_1(message, bot, __name__, text_select_tp_0, text_select
                 e = str(row[4])                                 
                 f = str(row[5])
                 g = str(row[6])                
-                raspis=("|ИД=" + a + "|" + b + "|с-" + c + "|по-" + d + "\n|" + e + "|" + f + "|каб-" + g + "\n\n")
+                raspis=("|ИД=" + a + "|" + b + ", " + c + ", " + d + "\n" + e + ", " + f + ", " + g + "\n\n")
+                bot.send_message(message.chat.id, raspis)
                 #print("ИД =", row[0], "| Дата =", row[1], "| Время начала =", row[2], "| Время конца =", row[3], "| Предмет =", row[4], "| Преподователь =", row[5], "| Кабинет =", row[6])                      
                 with open ('rasp.txt', 'a') as f:
                     f.write(raspis)
             with open("rasp.txt") as file:
                 data = file.read()
-            bot.send_message(message.chat.id, data)
+            
             os.remove("rasp.txt")           
         except (Exception, Error) as error:
                 print("Ошибка при работе с PostgreSQL", error)
@@ -114,7 +117,7 @@ def select_request_SQL_admin(message, bot, __name__):
                 d = str(row[3])
                 e = str(row[4])                                 
                 f = str(row[5])                                
-                admin_l=("|№=" + a + "|user_id: " + b + "\n|user_l_n: " + c + "|user_f_n: " + d + "|user_s_n: " + e + "\n|primechanie: " + f + "\n\n")
+                admin_l=("|№=" + a + "|user_id: " + b + "\nИмя: " + c + ", Фамилия: " + d + ", Отчество: " + e + "\nПримечание: " + f + "\n\n")
                 #print("ИД =", row[0], "| Дата =", row[1], "| Время начала =", row[2], "| Время конца =", row[3], "| Предмет =", row[4], "| Преподователь =", row[5], "| Кабинет =", row[6])                      
                 with open ('admin_list.txt', 'a') as f:
                     f.write(admin_l)

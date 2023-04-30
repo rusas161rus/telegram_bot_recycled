@@ -138,6 +138,17 @@ def pars_site(__name__):
             f.write(new_data)
         with open (file_name, 'r') as f:
             old_data = f.read()
+        new_data = old_data.replace("<b>Основы безопасности жизнедеятельности</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+
+        with open (file_name, 'r') as f:
+            old_data = f.read()
+        new_data = old_data.replace("<b>Доп. занятие ИС-1</b>", "") 
+        with open (file_name, 'w') as f:
+            f.write(new_data)
+        with open (file_name, 'r') as f:
+            old_data = f.read()
         new_data = old_data.replace("<b>", "\n") 
         with open (file_name, 'w') as f:
             f.write(new_data)

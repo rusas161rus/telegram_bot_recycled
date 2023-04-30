@@ -2,6 +2,9 @@ from sql import sql_delete
 from sql import sql_insert
 from sql import sql_update
 from sql import sql_select
+from sql import sql_select_prepod
+from sql import sql_seleqt_predmet
+from sql import sql_update_predmet
 
 
 def callback_handler_content(bot, __name__,message):
@@ -46,7 +49,94 @@ def callback_handler_content(bot, __name__,message):
                 bot.register_next_step_handler(msg, create_select_request_message_0)
             if call.data == 'conec':   # Поиск по времени       
                 msg = bot.send_message(call.message.chat.id, "Введите время конца с в формате хх:хх")
-                bot.register_next_step_handler(msg, create_select_request_message_1) 
+                bot.register_next_step_handler(msg, create_select_request_message_1)
+
+            # Добавление по 1 параметру для предметов и преподов
+            if call.data == 'name': # Имя учителя                                                    
+                msg = bot.send_message(call.message.chat.id, "Введите ИД записи")                                               
+                bot.register_next_step_handler(msg, create_request_message_predmet_0)                
+            if call.data == 'predmet': # Предмет      
+                msg = bot.send_message(call.message.chat.id, "Введите ИД записи")                
+                bot.register_next_step_handler(msg, create_request_message_predmet_1)
+            if call.data == 'mail': # Почта      
+                msg = bot.send_message(call.message.chat.id, "Введите ИД записи")                
+                bot.register_next_step_handler(msg, create_request_message_predmet_2)
+            if call.data == 'fone': # Телефон      
+                msg = bot.send_message(call.message.chat.id, "Введите ИД записи")                
+                bot.register_next_step_handler(msg, create_request_message_predmet_3)
+            if call.data == 'ref': # Ссылка на облако      
+                msg = bot.send_message(call.message.chat.id, "Введите ИД записи")                
+                bot.register_next_step_handler(msg, create_request_message_predmet_4)
+            if call.data == 'on_line': # Онлайн кабинет     
+                msg = bot.send_message(call.message.chat.id, "Введите ИД записи")               
+                bot.register_next_step_handler(msg, create_request_message_predmet_5)
+            if call.data == 'primechanie': # Примечание     
+                msg = bot.send_message(call.message.chat.id, "Введите ИД записи")               
+                bot.register_next_step_handler(msg, create_request_message_predmet_6)             
+
+            if call.data == 'Trichuk': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Trichuk(bot, __name__, message)
+            if call.data == 'Fichuk': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Fichuk(bot, __name__, message)
+            if call.data == 'Ygegova': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Ygegova(bot, __name__, message)
+            if call.data == 'Alibisheva': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Alibisheva(bot, __name__, message)
+            if call.data == 'Vidineeva': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Vidineeva(bot, __name__, message)
+            if call.data == 'Zadorognii': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Zadorognii(bot, __name__, message)
+            if call.data == 'Melnikova': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Melnikova(bot, __name__, message)
+            if call.data == 'Necvetaeva': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Necvetaeva(bot, __name__, message)
+            if call.data == 'Dozorova': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Dozorova(bot, __name__, message)
+            if call.data == 'Marisheva': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Marisheva(bot, __name__, message)
+            if call.data == 'Maheeva': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Maheeva(bot, __name__, message)
+            if call.data == 'Dgalagonia': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Dgalagonia(bot, __name__, message)
+            if call.data == 'Shterenzeer': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Shterenzeer(bot, __name__, message)
+            if call.data == 'Bolovihina': # Поиск по фамилии без ввода          
+                sql_select_prepod.sql_select_funk_Bolovihina(bot, __name__, message)
+
+            if call.data == 'Arhitectur': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_Arhitectur(bot, __name__, message)
+            if call.data == 'Standart_sert': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_Standart_sert(bot, __name__, message)
+            if call.data == 'bgd': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_bgd(bot, __name__, message)
+            if call.data == 'language': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_language(bot, __name__, message)
+            if call.data == 'inform_teh': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_inform_teh(bot, __name__, message)
+            if call.data == 'history': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_history(bot, __name__, message)
+            if call.data == 'system': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_system(bot, __name__, message)
+            if call.data == 'web': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_web(bot, __name__, message)
+            if call.data == 'algoritmy': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_algoritmy(bot, __name__, message)
+            if call.data == 'kibernetic': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_kibernetic(bot, __name__, message)
+            if call.data == 'psihology': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_psihology(bot, __name__, message)
+            if call.data == 'fiz_ra': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_fiz_ra(bot, __name__, message)
+            if call.data == 'aconomy': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_aconomy(bot, __name__, message)
+            if call.data == 'vishei_matematic': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_vishei_matematic(bot, __name__, message)
+            if call.data == 'diskret_matematic': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_diskret_matematic(bot, __name__, message)
+            if call.data == 'troria_veroatnosty': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_troria_veroatnosty(bot, __name__, message)
+            if call.data == 'chislennii_metod': # Поиск по предмету без ввода          
+                sql_seleqt_predmet.sql_select_funk_chislennii_metod(bot, __name__, message)            
 
         # Поиск по времени                  
         def create_select_request_message_0(message):
@@ -77,6 +167,64 @@ def callback_handler_content(bot, __name__,message):
         # Для удаления
         def create_request_admin_delete_1s(message):
             sql_delete.create_request_admin_delete_1(message, bot, __name__)
+
+        # Добавление по 1 параметру для предметов и преподов
+        def create_request_message_predmet_0(message):
+            global text_predmet_0
+            text_predmet_0 = message.text
+            msg=bot.send_message(message.chat.id, "Введите ФИО преподователя".format(message.from_user, bot.get_me()),
+            parse_mode = 'html')            
+            bot.register_next_step_handler(msg, create_request_SQL_predmet0)
+        def create_request_SQL_predmet0(message):                                   
+            sql_update_predmet.create_request_SQL_predmet0(message, bot, __name__, text_predmet_0)
+        def create_request_message_predmet_1(message):
+            global text_predmet_1
+            text_predmet_1 = message.text
+            msg=bot.send_message(message.chat.id, "Введите название урока".format(message.from_user, bot.get_me()),
+            parse_mode = 'html')            
+            bot.register_next_step_handler(msg, create_request_SQL_predmet1)
+        def create_request_SQL_predmet1(message):                                   
+            sql_update_predmet.create_request_SQL_predmet1(message, bot, __name__, text_predmet_1)
+        def create_request_message_predmet_2(message):
+            global text_predmet_2
+            text_predmet_2 = message.text
+            msg=bot.send_message(message.chat.id, "Введите почту преподователя".format(message.from_user, bot.get_me()),
+            parse_mode = 'html')            
+            bot.register_next_step_handler(msg, create_request_SQL_predmet2)
+        def create_request_SQL_predmet2(message):                                   
+            sql_update_predmet.create_request_SQL_predmet2(message, bot, __name__, text_predmet_2)
+        def create_request_message_predmet_3(message):
+            global text_predmet_3
+            text_predmet_3 = message.text
+            msg=bot.send_message(message.chat.id, "Введите телефон преподователя".format(message.from_user, bot.get_me()),
+            parse_mode = 'html')            
+            bot.register_next_step_handler(msg, create_request_SQL_predmet3)
+        def create_request_SQL_predmet3(message):                                   
+            sql_update_predmet.create_request_SQL_predmet3(message, bot, __name__, text_predmet_3)
+        def create_request_message_predmet_4(message):
+            global text_predmet_4
+            text_predmet_4 = message.text
+            msg=bot.send_message(message.chat.id, "Введите ссылку на облако".format(message.from_user, bot.get_me()),
+            parse_mode = 'html')            
+            bot.register_next_step_handler(msg, create_request_SQL_predmet4)
+        def create_request_SQL_predmet4(message):                                   
+            sql_update_predmet.create_request_SQL_predmet4(message, bot, __name__, text_predmet_4)
+        def create_request_message_predmet_5(message):
+            global text_predmet_5
+            text_predmet_5 = message.text
+            msg=bot.send_message(message.chat.id, "Введите ссылку на онлайн кабинет".format(message.from_user, bot.get_me()),
+            parse_mode = 'html')            
+            bot.register_next_step_handler(msg, create_request_SQL_predmet5)
+        def create_request_SQL_predmet5(message):                                   
+            sql_update_predmet.create_request_SQL_predmet5(message, bot, __name__, text_predmet_5)
+        def create_request_message_predmet_6(message):
+            global text_predmet_6
+            text_predmet_6 = message.text
+            msg=bot.send_message(message.chat.id, "Введите примечание".format(message.from_user, bot.get_me()),
+            parse_mode = 'html')            
+            bot.register_next_step_handler(msg, create_request_SQL_predmet6)
+        def create_request_SQL_predmet6(message):                                   
+            sql_update_predmet.create_request_SQL_predmet6(message, bot, __name__, text_predmet_6)
 
         # Добавление по 1 параметру
         def create_request_message_0(message):
