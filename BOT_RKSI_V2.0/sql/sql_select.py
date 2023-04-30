@@ -103,7 +103,7 @@ def select_request_SQL_s_1(message, bot, __name__, text_select_tp_0, text_select
         finally: 
                 bot.send_message(message.chat.id, "Поиск завершен!".format(name = message.text))
 
-def select_request_SQL_admin(message, bot, __name__):
+def select_request_SQL_admin(message, bot, __name__, call):
     if __name__ == '__main__':
         try:                  
             cursor = connection.cursor()                              
@@ -123,11 +123,11 @@ def select_request_SQL_admin(message, bot, __name__):
                     f.write(admin_l)
             with open("admin_list.txt") as file:
                 data = file.read()
-            bot.send_message(message.chat.id, data)
+            bot.send_message(call.message.chat.id, data)
             os.remove("admin_list.txt")
             print(admin_l)           
         except (Exception, Error) as error:
                 print("Ошибка при работе с PostgreSQL", error)
-                bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+                bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
         finally: 
-                bot.send_message(message.chat.id, "Поиск завершен!".format(name = message.text))
+                bot.send_message(call.message.chat.id, "Поиск завершен!".format(name = message.text))

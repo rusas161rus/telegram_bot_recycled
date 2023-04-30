@@ -10,6 +10,7 @@ from time import sleep
 from message_handler_rep import message_handler_text
 from Admin_options  import message_handler_admin
 
+
 logger=telebot.logger
 telebot.logger.setLevel(logging.DEBUG)
 logging.basicConfig(filename="fullsearch.log", format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -37,7 +38,7 @@ if __name__ == "__main__":
 
 @bot.message_handler(commands = ['start'])
 def start_message(message):
-    bot.send_message(message.chat.id, 'Привет, данный бот призван облегчить твое взаимодействие с колледжом РКСИ.\nНапоминанаю, что при нажатии кнопки меню слева или если ввести в поле ввода сообщения слеш откроется меню с 3 вариантами:\n/raspisanie - покажет актуальное расписание нашей группы\n/admin_menu если ты не админ то туда не нажимай\n/faq - здесь актуальная информация по преподователям и предмета, а так же ссылки на облако')
+    bot.send_message(message.chat.id, 'Привет, данный бот призван облегчить твое взаимодействие с колледжом РКСИ.\nНапоминанаю, что при нажатии кнопки меню слева или если ввести в поле ввода сообщения слеш откроется меню с 3 вариантами:\n/raspisanie - покажет актуальное расписание нашей группы\n/admin_menu - если ты не админ то туда не нажимай\n/faq - здесь актуальная информация по преподователям и предметам, а так же ссылки на облако')
 
 @bot.message_handler(commands = ['raspisanie'])
 def button(message):        
@@ -46,8 +47,8 @@ def button(message):
     btm1 = types.KeyboardButton('Расписание из БД')    
     btm5 = types.KeyboardButton('Поиск по времени')       
     markup.add(btm4, btm1, btm5)
-    btm8 = types.KeyboardButton('скрыть кнопки')
-    markup.add(btm8)  
+    btm20 = types.KeyboardButton('Расписание звонков общее!')
+    markup.add(btm20)    
     bot.send_message(message.chat.id, 'Бот запущен!', reply_markup = markup)
 
 @bot.message_handler(commands = ['admin_menu'])
@@ -57,21 +58,21 @@ def button(message):
     btm2 = types.KeyboardButton('Изменить расписание')
     btm4 = types.KeyboardButton('Изменить предмет')               
     markup.add(btm3, btm2, btm4)
-    btm7 = types.KeyboardButton('Администрация')
-    btm8 = types.KeyboardButton('скрыть кнопки')    
-    markup.add(btm7, btm8)    
+    btm7 = types.KeyboardButton('Администрация')        
+    markup.add(btm7)    
     bot.send_message(message.chat.id, 'Бот запущен!', reply_markup = markup)
 
 @bot.message_handler(commands = ['faq'])
 def button(message):        
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-    btm6 = types.KeyboardButton('Сайт РКСИ и Ссылка на Облако!')
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=4)
+    btm6 = types.KeyboardButton('Сайт РКСИ и Ссылка на Облако, Ссылка на Онлайн кабинеты!')
     markup.add(btm6)     
     btm9 = types.KeyboardButton('Список преподователей')    
     btm10 = types.KeyboardButton('Список предметов')              
-    btm11 = types.KeyboardButton('ЧаВо!') 
-    markup.add(btm9, btm10, btm11)
-    btm8 = types.KeyboardButton('скрыть кнопки')
+    btm11 = types.KeyboardButton('ЧаВо!')
+    btm12 = types.KeyboardButton('Памятка по оплате!') 
+    markup.add(btm9, btm10, btm11, btm12)
+    btm8 = types.KeyboardButton('Мой-ID')
     markup.add(btm8)
     bot.send_message(message.chat.id, 'Бот запущен!', reply_markup = markup)
 

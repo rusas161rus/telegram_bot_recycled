@@ -8,7 +8,7 @@ connection = psycopg2.connect(  user = config.USER,
                                 port = config.PORT, 
                                 database = config.DATABASE)
 
-def sql_select_funk_Arhitectur(bot, __name__, message):
+def sql_select_funk_Arhitectur(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -25,14 +25,14 @@ def sql_select_funk_Arhitectur(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_Standart_sert(bot, __name__, message):
+def sql_select_funk_Standart_sert(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -49,14 +49,14 @@ def sql_select_funk_Standart_sert(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_bgd(bot, __name__, message):
+def sql_select_funk_bgd(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -73,14 +73,14 @@ def sql_select_funk_bgd(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_language(bot, __name__, message):
+def sql_select_funk_language(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -97,14 +97,14 @@ def sql_select_funk_language(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_inform_teh(bot, __name__, message):
+def sql_select_funk_inform_teh(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -121,14 +121,14 @@ def sql_select_funk_inform_teh(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_history(bot, __name__, message):
+def sql_select_funk_history(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -145,14 +145,14 @@ def sql_select_funk_history(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_system(bot, __name__, message):
+def sql_select_funk_system(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -169,14 +169,14 @@ def sql_select_funk_system(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_web(bot, __name__, message):
+def sql_select_funk_web(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -193,14 +193,14 @@ def sql_select_funk_web(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_algoritmy(bot, __name__, message):
+def sql_select_funk_algoritmy(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -217,14 +217,14 @@ def sql_select_funk_algoritmy(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_kibernetic(bot, __name__, message):
+def sql_select_funk_kibernetic(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -241,14 +241,14 @@ def sql_select_funk_kibernetic(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_psihology(bot, __name__, message):
+def sql_select_funk_psihology(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -265,14 +265,14 @@ def sql_select_funk_psihology(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_fiz_ra(bot, __name__, message):
+def sql_select_funk_fiz_ra(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -289,14 +289,14 @@ def sql_select_funk_fiz_ra(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_aconomy(bot, __name__, message):
+def sql_select_funk_aconomy(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -313,14 +313,14 @@ def sql_select_funk_aconomy(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_vishei_matematic(bot, __name__, message):
+def sql_select_funk_vishei_matematic(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -337,14 +337,14 @@ def sql_select_funk_vishei_matematic(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_diskret_matematic(bot, __name__, message):
+def sql_select_funk_diskret_matematic(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -361,14 +361,14 @@ def sql_select_funk_diskret_matematic(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_troria_veroatnosty(bot, __name__, message):
+def sql_select_funk_troria_veroatnosty(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -385,14 +385,14 @@ def sql_select_funk_troria_veroatnosty(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")
 
-def sql_select_funk_chislennii_metod(bot, __name__, message):
+def sql_select_funk_chislennii_metod(bot, __name__, message, call):
     if __name__ == '__main__':        
         try:             
             cursor = connection.cursor()                              
@@ -409,9 +409,9 @@ def sql_select_funk_chislennii_metod(bot, __name__, message):
                 fone = str(row[6])
                 primechanie = str(row[7])                
                 raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(message.chat.id, raspis)                                    
+                bot.send_message(call.message.chat.id, raspis)                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
-            bot.send_message(message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
-        bot.send_message(message.chat.id, "Поиск завершен")
+            bot.send_message(call.message.chat.id, "Ошибка при работе с PostgreSQL".format(name = message.text))
+        bot.send_message(call.message.chat.id, "Поиск завершен")

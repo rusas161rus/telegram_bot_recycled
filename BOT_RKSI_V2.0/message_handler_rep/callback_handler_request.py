@@ -1,3 +1,4 @@
+from message_handler_rep import funk
 from sql import sql_delete
 from sql import sql_insert
 from sql import sql_update
@@ -7,10 +8,23 @@ from sql import sql_seleqt_predmet
 from sql import sql_update_predmet
 
 
+
 def callback_handler_content(bot, __name__,message):
     if __name__ == '__main__':           
         @bot.callback_query_handler(func = lambda call: True)        
-        def answer(call):              
+        def answer(call):
+            if call.data == 'pamatca0': # МБ                                                     
+                funk.pamatka0(bot, message, __name__, call)                
+            if call.data == 'pamatca1': # Терминал      
+                funk.pamatka1(bot, message, __name__, call)
+
+            if call.data == 'raspis_0': # просто расписание                                                     
+                funk.raspis_0(bot, message, __name__, call)                
+            if call.data == 'raspis_1': # с учетом кл часов      
+                funk.raspis_1(bot, message, __name__, call)
+            if call.data == 'raspis_2': # Сокращённое      
+                funk.raspis_2(bot, message, __name__, call)                 
+                                              
             if call.data == 'a': # Время Начала                                                     
                 msg = bot.send_message(call.message.chat.id, "Введите ИД записи")                                               
                 bot.register_next_step_handler(msg, create_request_message_0)                
@@ -36,7 +50,7 @@ def callback_handler_content(bot, __name__,message):
                 msg = bot.send_message(call.message.chat.id, "Введите дату в формате гггг-мм-дд")                
                 bot.register_next_step_handler(msg, create_insrt_request_message_0)
             if call.data == 'admin_a': # Список админов                                 
-                sql_select.select_request_SQL_admin(message, bot, __name__)                
+                sql_select.select_request_SQL_admin(message, bot, __name__, call)                
             if call.data == 'admin_b': # Добавить админов
                 msg = bot.send_message(call.message.chat.id, "Введите ИД")                
                 bot.register_next_step_handler(msg, create_insrt_request_admin_message_0)
@@ -75,68 +89,68 @@ def callback_handler_content(bot, __name__,message):
                 bot.register_next_step_handler(msg, create_request_message_predmet_6)             
 
             if call.data == 'Trichuk': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Trichuk(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Trichuk(bot, __name__, message, call)
             if call.data == 'Fichuk': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Fichuk(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Fichuk(bot, __name__, message, call)
             if call.data == 'Ygegova': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Ygegova(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Ygegova(bot, __name__, message, call)
             if call.data == 'Alibisheva': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Alibisheva(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Alibisheva(bot, __name__, message, call)
             if call.data == 'Vidineeva': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Vidineeva(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Vidineeva(bot, __name__, message, call)
             if call.data == 'Zadorognii': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Zadorognii(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Zadorognii(bot, __name__, message, call)
             if call.data == 'Melnikova': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Melnikova(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Melnikova(bot, __name__, message, call)
             if call.data == 'Necvetaeva': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Necvetaeva(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Necvetaeva(bot, __name__, message, call)
             if call.data == 'Dozorova': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Dozorova(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Dozorova(bot, __name__, message, call)
             if call.data == 'Marisheva': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Marisheva(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Marisheva(bot, __name__, message, call)
             if call.data == 'Maheeva': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Maheeva(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Maheeva(bot, __name__, message, call)
             if call.data == 'Dgalagonia': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Dgalagonia(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Dgalagonia(bot, __name__, message, call)
             if call.data == 'Shterenzeer': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Shterenzeer(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Shterenzeer(bot, __name__, message, call)
             if call.data == 'Bolovihina': # Поиск по фамилии без ввода          
-                sql_select_prepod.sql_select_funk_Bolovihina(bot, __name__, message)
+                sql_select_prepod.sql_select_funk_Bolovihina(bot, __name__, message, call)
 
             if call.data == 'Arhitectur': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_Arhitectur(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_Arhitectur(bot, __name__, message, call)
             if call.data == 'Standart_sert': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_Standart_sert(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_Standart_sert(bot, __name__, message, call)
             if call.data == 'bgd': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_bgd(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_bgd(bot, __name__, message, call)
             if call.data == 'language': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_language(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_language(bot, __name__, message, call)
             if call.data == 'inform_teh': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_inform_teh(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_inform_teh(bot, __name__, message, call)
             if call.data == 'history': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_history(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_history(bot, __name__, message, call)
             if call.data == 'system': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_system(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_system(bot, __name__, message, call)
             if call.data == 'web': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_web(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_web(bot, __name__, message, call)
             if call.data == 'algoritmy': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_algoritmy(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_algoritmy(bot, __name__, message, call)
             if call.data == 'kibernetic': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_kibernetic(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_kibernetic(bot, __name__, message, call)
             if call.data == 'psihology': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_psihology(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_psihology(bot, __name__, message, call)
             if call.data == 'fiz_ra': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_fiz_ra(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_fiz_ra(bot, __name__, message, call)
             if call.data == 'aconomy': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_aconomy(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_aconomy(bot, __name__, message, call)
             if call.data == 'vishei_matematic': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_vishei_matematic(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_vishei_matematic(bot, __name__, message, call)
             if call.data == 'diskret_matematic': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_diskret_matematic(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_diskret_matematic(bot, __name__, message, call)
             if call.data == 'troria_veroatnosty': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_troria_veroatnosty(bot, __name__, message)
+                sql_seleqt_predmet.sql_select_funk_troria_veroatnosty(bot, __name__, message, call)
             if call.data == 'chislennii_metod': # Поиск по предмету без ввода          
-                sql_seleqt_predmet.sql_select_funk_chislennii_metod(bot, __name__, message)            
+                sql_seleqt_predmet.sql_select_funk_chislennii_metod(bot, __name__, message, call)            
 
         # Поиск по времени                  
         def create_select_request_message_0(message):
