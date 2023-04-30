@@ -13,7 +13,7 @@ def create_request_SQL_predmet0(message, bot, __name__, text_predmet_0):
         try:         
             text_only_one_0 = [text_predmet_0]       
             cursor = connection.cursor()                              
-            cursor.execute("""Update Raspisanie set PREDMET = '{}' where id = %s""".format(message.text), (text_only_one_0))
+            cursor.execute("""Update PREPODOVATEL_TABLE set PREPODOVATEL_NAME = '{}' where id = %s""".format(message.text), (text_only_one_0))
             connection.commit()
             print(cursor.rowcount, "Запись успешно обновлена")        
             bot.send_message(message.chat.id, "Запись успешно обновлена".format(name = message.text))         
@@ -26,7 +26,7 @@ def create_request_SQL_predmet1(message, bot, __name__, text_predmet_1):
         try:         
             text_only_one_0 = [text_predmet_1]       
             cursor = connection.cursor()                              
-            cursor.execute("""Update Raspisanie set PREDMET = '{}' where id = %s""".format(message.text), (text_only_one_0))
+            cursor.execute("""Update PREPODOVATEL_TABLE set PREDMET = '{}' where id = %s""".format(message.text), (text_only_one_0))
             connection.commit()
             print(cursor.rowcount, "Запись успешно обновлена")        
             bot.send_message(message.chat.id, "Запись успешно обновлена".format(name = message.text))         
@@ -39,7 +39,7 @@ def create_request_SQL_predmet2(message, bot, __name__, text_predmet_2):
         try:         
             text_only_one_0 = [text_predmet_2]       
             cursor = connection.cursor()                              
-            cursor.execute("""Update Raspisanie set MAIL = '{}' where id = %s""".format(message.text), (text_only_one_0))
+            cursor.execute("""Update PREPODOVATEL_TABLE set MAIL = '{}' where id = %s""".format(message.text), (text_only_one_0))
             connection.commit()
             print(cursor.rowcount, "Запись успешно обновлена")        
             bot.send_message(message.chat.id, "Запись успешно обновлена".format(name = message.text))         
@@ -52,7 +52,7 @@ def create_request_SQL_predmet3(message, bot, __name__, text_predmet_3):
         try:         
             text_only_one_0 = [text_predmet_3]       
             cursor = connection.cursor()                              
-            cursor.execute("""Update Raspisanie set FONE = '{}' where id = %s""".format(message.text), (text_only_one_0))
+            cursor.execute("""Update PREPODOVATEL_TABLE set FONE = '{}' where id = %s""".format(message.text), (text_only_one_0))
             connection.commit()
             print(cursor.rowcount, "Запись успешно обновлена")        
             bot.send_message(message.chat.id, "Запись успешно обновлена".format(name = message.text))         
@@ -65,7 +65,7 @@ def create_request_SQL_predmet4(message, bot, __name__, text_predmet_4):
         try:         
             text_only_one_0 = [text_predmet_4]       
             cursor = connection.cursor()                              
-            cursor.execute("""Update Raspisanie set REF = '{}' where id = %s""".format(message.text), (text_only_one_0))
+            cursor.execute("""Update PREPODOVATEL_TABLE set REF = '{}' where id = %s""".format(message.text), (text_only_one_0))
             connection.commit()
             print(cursor.rowcount, "Запись успешно обновлена")        
             bot.send_message(message.chat.id, "Запись успешно обновлена".format(name = message.text))         
@@ -78,7 +78,7 @@ def create_request_SQL_predmet5(message, bot, __name__, text_predmet_5):
         try:         
             text_only_one_0 = [text_predmet_5]       
             cursor = connection.cursor()                              
-            cursor.execute("""Update Raspisanie set ON_LINE_CABINET = '{}' where id = %s""".format(message.text), (text_only_one_0))
+            cursor.execute("""Update PREPODOVATEL_TABLE set ON_LINE_CABINET = '{}' where id = %s""".format(message.text), (text_only_one_0))
             connection.commit()
             print(cursor.rowcount, "Запись успешно обновлена")        
             bot.send_message(message.chat.id, "Запись успешно обновлена".format(name = message.text))         
@@ -91,7 +91,7 @@ def create_request_SQL_predmet6(message, bot, __name__, text_predmet_6):
         try:         
             text_only_one_0 = [text_predmet_6]       
             cursor = connection.cursor()                              
-            cursor.execute("""Update Raspisanie set PRIMECHANIE = '{}' where id = %s""".format(message.text), (text_only_one_0))
+            cursor.execute("""Update PREPODOVATEL_TABLE set PRIMECHANIE = '{}' where id = %s""".format(message.text), (text_only_one_0))
             connection.commit()
             print(cursor.rowcount, "Запись успешно обновлена")        
             bot.send_message(message.chat.id, "Запись успешно обновлена".format(name = message.text))         
