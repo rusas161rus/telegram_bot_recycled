@@ -29,7 +29,7 @@ def massege_handler_content(bot, __name__):
                     bot.send_message(message.chat.id, "Ваш логин: {0.username} и Ваш ID: {0.id}.".format(message.from_user, bot.get_me(),
                     parse_mode='html'))
                 if message.text == 'ЧаВо!':
-                    doc = open('C:/Users/rusas/Desktop/dev_chernovik/Portfolio/BOT_RKSI_V2.0/DATA/ЧаВо.pdf', 'rb')
+                    doc = open('DATA/ЧаВо.pdf', 'rb')
                     bot.send_document(message.chat.id, doc)
                 if message.text == 'скрыть кнопки':                
                     bot.send_message(message.chat.id, 'что бы снова открыть кнопки введи /start', reply_markup=types.ReplyKeyboardRemove())
@@ -40,13 +40,15 @@ def massege_handler_content(bot, __name__):
                     btm_ss_1 = types.InlineKeyboardButton("Сайт РКСИ", url="https://www.rksi.ru/schedule")
                     btm_ss_2 = types.InlineKeyboardButton("Онлайн кабинеты", url="https://docs.google.com/spreadsheets/d/1TYqoU3pGHd_u1UWjHV5TaHKOZr_d3nYG1MG0cVKye3Q/view#gid=1185239252")
                     markup.add(btm_ss_0, btm_ss_1, btm_ss_2)
+                    markup.add( types.InlineKeyboardButton("Ссылка на гайд по python", url="https://www.youtube.com/playlist?ist=PLAma_mKffTOSY12JZS6l8lxKCpooPVcrn"))
+                    markup.add( types.InlineKeyboardButton("Aspose, рисование блок-схем", url="https://products.aspose.app/diagram/ru/flowchart"))
                     bot.send_message(message.chat.id, 'Сайт РКСИ и Ссылка на Облако, Ссылка на Онлайн кабинеты!', reply_markup=markup)
                 if message.text=='Памятка по оплате!':
                     markup=types.InlineKeyboardMarkup(row_width=2)
                     btm_sp_0 = types.InlineKeyboardButton("Через МБ", callback_data = 'pamatca0')
                     btm_sp_1 = types.InlineKeyboardButton("Через Терминал", callback_data = 'pamatca1')
                     markup.add(btm_sp_0, btm_sp_1)
-                    bot.send_message(message.chat.id, 'Памятка по оплате!', reply_markup=markup)
+                    bot.send_message(message.chat.id, 'Заполнить ФИО плательщика (родителя)\nФИО студента\nНаименование услуги - <b>ЗАОЧНОЕ или ДНЕВНОЕ</b>\nГруппа - наименование специальности\n9 классов или 11\nГражданство - <b>РФ</b>\nНаименование документа - <b>ПАСПОРТ</b>\nНомер документа - <b>СЕРИЯ И НОМЕР ПАСПОРТА</b>\nУИН - <b>0</b>\nИНН - <b>0</b>\nНажать - <b>ПРОДОЛЖИТЬ</b>\n\nВыбрать способ оплаты - <B>ОПЛАТА НАЛИЧНЫМИ</B>\nВвести сумму платежа, произвести оплату.\n\n<b>Максимальная сумма одной платежной операции 15 000 рублей</b>', parse_mode='html', reply_markup=markup)
                     callback_handler_request.callback_handler_content(bot, __name__, message)
                 if message.text=='Расписание звонков общее!':
                     markup=types.InlineKeyboardMarkup(row_width=3)

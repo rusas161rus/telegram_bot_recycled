@@ -64,16 +64,17 @@ def button(message):
 
 @bot.message_handler(commands = ['faq'])
 def button(message):        
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=4)
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     btm6 = types.KeyboardButton('Сайт РКСИ и Ссылка на Облако, Ссылка на Онлайн кабинеты!')
     markup.add(btm6)     
     btm9 = types.KeyboardButton('Список преподователей')    
     btm10 = types.KeyboardButton('Список предметов')              
     btm11 = types.KeyboardButton('ЧаВо!')
     btm12 = types.KeyboardButton('Памятка по оплате!') 
-    markup.add(btm9, btm10, btm11, btm12)
+    markup.add(btm9, btm10, btm12)
+    btm11 = types.KeyboardButton('ЧаВо!')
     btm8 = types.KeyboardButton('Мой-ID')
-    markup.add(btm8)
+    markup.add(btm8, btm11)
     bot.send_message(message.chat.id, 'Бот запущен!', reply_markup = markup)
 
 

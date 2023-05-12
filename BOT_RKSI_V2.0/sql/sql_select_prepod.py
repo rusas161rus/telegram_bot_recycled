@@ -23,9 +23,9 @@ def sql_select_funk_Trichuk(bot, __name__, message, call):
                 mail = str(row[4])                                 
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
-                primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                primechanie = str(row[7])                               
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -48,8 +48,8 @@ def sql_select_funk_Fichuk(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -72,8 +72,8 @@ def sql_select_funk_Ygegova(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -96,8 +96,8 @@ def sql_select_funk_Alibisheva(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -120,8 +120,8 @@ def sql_select_funk_Vidineeva(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -144,8 +144,8 @@ def sql_select_funk_Zadorognii(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -168,8 +168,8 @@ def sql_select_funk_Melnikova(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -192,8 +192,8 @@ def sql_select_funk_Necvetaeva(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -216,8 +216,8 @@ def sql_select_funk_Dozorova(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -240,8 +240,8 @@ def sql_select_funk_Marisheva(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -264,8 +264,8 @@ def sql_select_funk_Maheeva(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -289,8 +289,8 @@ def sql_select_funk_Dgalagonia(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -313,8 +313,8 @@ def sql_select_funk_Shterenzeer(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                    
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
@@ -337,8 +337,8 @@ def sql_select_funk_Bolovihina(bot, __name__, message, call):
                 on_line_cabinet = str(row[5])
                 fone = str(row[6])
                 primechanie = str(row[7])                
-                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\n Ссылка на облако -" + ref + "\n\n Ссылка на online кабинет -" + on_line_cabinet)
-                bot.send_message(call.message.chat.id, raspis)                                    
+                raspis=("|ИД=" + id + "|\n" + prepodovatel_name + ", " + predmet + "\nПочта: " + mail + "\nНомер телефона: " + fone + "\nПримечание: " +primechanie + "\n\nСсылка на " + "<a href='%s'>облако</a>" %ref + "\nСсылка на " + "<a href='%s'>online-кабинет</a>" %on_line_cabinet)
+                bot.send_message(call.message.chat.id, raspis, parse_mode='html')                                   
                        
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
